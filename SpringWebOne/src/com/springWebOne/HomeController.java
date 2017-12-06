@@ -4,21 +4,29 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping("/helloController")
 public class HomeController {
 	
 		@RequestMapping("/")
 		public String helloWorld() {
 			return "main-menu";
 		}
+		@RequestMapping("/directToForm")
+		public String directToForm(Model themodel) {
+			themodel.addAttribute("theStudent", new Student());
+			System.out.println("directing to the st"
+					+ "modeludent form");
+			return "studentForm";
+		}
 	
 		@RequestMapping("/showform")
-		public String showForm() {
-			return "HelloworldForm";
+		public String showForm(@ModelAttribute("theStudent") Student theStudent) {
+			System.out.println(theStudent.getFname()+" "+theStudent.getLname());
+			return "processedForm";
 		}
 		
 		@RequestMapping("/processForm")

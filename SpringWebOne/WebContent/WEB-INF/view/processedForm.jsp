@@ -8,7 +8,7 @@
 </head>
 <body>
 	<center> <h1>Processed Form</h1>
-			 <h4>Student's name: ${UpperCase}</h4> 	
+			 <h4>Student's name: ${theStudent.fname} ${theStudent.lname}</h4> 	
 	</center>
 </body>
 </html>
