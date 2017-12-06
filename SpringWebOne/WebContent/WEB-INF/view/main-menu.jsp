@@ -9,7 +9,7 @@
 <body>
 	
 	<h1>Welcome to homepage</h1>
-	<a href="showform">Student Form Submission</a>
+	<a href="helloController/showform">Student Form Submission</a>
 
 </body>
 </html>
