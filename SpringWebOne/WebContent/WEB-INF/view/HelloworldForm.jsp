@@ -9,7 +9,7 @@
 <body>
 <center>
 	<h1>Welcome form</h1>
-	<form action="processForm" method="get">
+	<form action="processModelForm" method="get">
 	Name: <input type="text" name="studentName" placeholder="Enter your name" />
 	<input type="submit" value="submit">
 	</form>
