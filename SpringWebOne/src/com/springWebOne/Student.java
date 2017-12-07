@@ -8,6 +8,7 @@ public class Student {
 	private String lname;
 	private String countary;
 	private LinkedHashMap<String, String> coptions;
+	private String favLang;
 	
 	public Student() {
 		coptions = new LinkedHashMap<String, String>();
@@ -42,6 +43,14 @@ public class Student {
 
 	public LinkedHashMap<String, String> getCoptions() {
 		return coptions;
+	}
+
+	public String getFavLang() {
+		return favLang;
+	}
+
+	public void setFavLang(String favLang) {
+		this.favLang = favLang;
 	}
 	
 	

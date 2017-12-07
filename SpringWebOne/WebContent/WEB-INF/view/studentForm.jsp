@@ -18,6 +18,11 @@
 		<form:select path="countary">
 			<form:options items="${theStudent.coptions}" />
 		</form:select>
+		
+		Java:<form:radiobutton path="favLang" value="Java"/>
+		Ruby:<form:radiobutton path="favLang" value="Ruby"/>
+		C++:<form:radiobutton path="favLang" value="C++"/>
+		PHP:<form:radiobutton path="favLang" value="PHP"/>
 		<input type="submit" value="submit">
 	</form:form>
 </center>

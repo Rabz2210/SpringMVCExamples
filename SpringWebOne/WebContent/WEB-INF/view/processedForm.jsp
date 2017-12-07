@@ -9,7 +9,8 @@
 <body>
 	<center> <h1>Processed Form</h1>
 			 <h4>Student's name: ${theStudent.fname} ${theStudent.lname}</h4>
-			 <h4>countary:live in ${theStudent.countary}</h4>
+			 <h4>countary:live in : ${theStudent.countary}</h4>
+			 <h4>loves to code in: ${theStudent.favLang}</h4>
 	</center>
 </body>
 </html>
