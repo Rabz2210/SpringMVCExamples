@@ -14,6 +14,10 @@
 		<br><br>
 		Lname:<form:input path="lname"/>
 		<br><br>
+		Country:
+		<form:select path="countary">
+			<form:options items="${theStudent.coptions}" />
+		</form:select>
 		<input type="submit" value="submit">
 	</form:form>
 </center>
