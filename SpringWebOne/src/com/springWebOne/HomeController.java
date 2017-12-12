@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class HomeController {
 	
-		@RequestMapping("/")
+		@RequestMapping({"/","/main-page"})
 		public String helloWorld() {
 			return "main-menu";
 		}

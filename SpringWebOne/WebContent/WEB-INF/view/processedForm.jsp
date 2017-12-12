@@ -11,6 +11,8 @@
 			 <h4>Student's name: ${theStudent.fname} ${theStudent.lname}</h4>
 			 <h4>countary:live in : ${theStudent.countary}</h4>
 			 <h4>loves to code in: ${theStudent.favLang}</h4>
+			 <br><br>
+			 <h3><a href="main-page">Click to go to main page</a></h3>
 	</center>
 </body>
 </html>
