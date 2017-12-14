@@ -2,9 +2,15 @@ package com.springWebOne;
 
 import java.util.LinkedHashMap;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+
 public class Student {
 	
 	private String fname;
+	@NotNull(message="is required")
+	@Size(min=5,message="is required")
 	private String lname;
 	private String countary;
 	private LinkedHashMap<String, String> coptions;

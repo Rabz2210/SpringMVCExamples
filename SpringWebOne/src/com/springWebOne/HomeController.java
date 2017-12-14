@@ -1,9 +1,14 @@
 package com.springWebOne;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,11 +27,28 @@ public class HomeController {
 					+ "modeludent form");
 			return "studentForm";
 		}
+		//Adding init Binder to convert or trim input string
+		//remove leading or trailing white spaces
+		//resolve issues for our validation.
+		@InitBinder
+		public void initBinder(WebDataBinder dataBinder) {
+			StringTrimmerEditor stringtrimmmereditor = new StringTrimmerEditor(true);
+			dataBinder.registerCustomEditor(String.class, stringtrimmmereditor);
+		}
+		
+		
 	
 		@RequestMapping("/showform")
-		public String showForm(@ModelAttribute("theStudent") Student theStudent) {
-			System.out.println(theStudent.getFname()+" "+theStudent.getLname());
-			return "processedForm";
+		public String showForm(
+					@Valid @ModelAttribute("theStudent") Student theStudent,
+					BindingResult theBindingResult) {
+			System.out.println("last Name: "+ theStudent.getLname());
+			if(theBindingResult.hasErrors()) {
+				return "studentForm";
+			}else {
+				System.out.println(theStudent.getFname()+" "+theStudent.getLname());
+				return "processedForm";
+			}
 		}
 		
 		@RequestMapping("/processForm")

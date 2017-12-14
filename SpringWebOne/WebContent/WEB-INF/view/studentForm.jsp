@@ -6,6 +6,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<style type="text/css">
+	.error {color:red}
+</style>
 </head>
 <body>
 <center>
@@ -13,6 +16,7 @@
 		Fname:<form:input path="fname" />
 		<br><br>
 		Lname:<form:input path="lname"/>
+		<form:errors path="lname" cssClass="error"/>
 		<br><br>
 		Country:
 		<form:select path="countary">
